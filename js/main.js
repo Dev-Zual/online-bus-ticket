@@ -4,6 +4,14 @@ let count = 0;
 for (let btn of buttons) {
   btn.addEventListener("click", function (e) {
     count++;
+    // set clicked seat bg color
+    const clickedBtn = e.target;
+    // clickedBtn.style.backgroundColor = "#1dd100";
+    clickedBtn.classList.add(
+      "text-white",
+      "bg-[#1dd100]",
+      "hover:bg-[#1dd100]"
+    );
     // set count btn value
     setInnerText("count-btn", count);
     const seatNumber = e.target.innerText;
