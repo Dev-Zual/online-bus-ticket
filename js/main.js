@@ -29,12 +29,8 @@ for (let btn of buttons) {
 
     setChild("show-seat-list", tr);
 
-    // get previews total price
-    const previewsTotalPrice = getConvertedValue("total-price");
-
-    const totalPrice = previewsTotalPrice + 550;
-    // set total new price
-    setInnerText("total-price", totalPrice);
+    // set total
+    getTotal();
     // set grand total
     getGrandTotal();
   });

@@ -473,11 +473,17 @@
                         class="input input-bordered flex items-center gap-2 p-3"
                       >
                         <input
+                          id="coupon-input"
                           type="text"
                           class="grow"
                           placeholder="Have any coupons?"
                         />
-                        <button class="btn bg-[#1dd100]">Apply</button>
+                        <button
+                          onclick="getGrandTotal('coupon')"
+                          class="btn bg-[#1dd100]"
+                        >
+                          Apply
+                        </button>
                       </label>
                     </div>
                     <!-- grand total -->

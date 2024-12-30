@@ -11,7 +11,21 @@ function getConvertedValue(id) {
   return Number(valueText);
 }
 
-function getGrandTotal() {
+function getTotal() {
   const totalPrice = getConvertedValue("total-price");
-  setInnerText("grand-total", totalPrice);
+  const price = totalPrice + 550;
+  setInnerText("total-price", price);
+}
+
+function getGrandTotal(status) {
+  const coupon = document.getElementById("coupon-input").value;
+  const totalPrice = getConvertedValue("total-price");
+  if (coupon === "NEW15") {
+    const discount = totalPrice * 0.15;
+    const price = totalPrice - discount;
+    setInnerText("grand-total", price);
+    document.getElementById("coupon-input").value = "";
+  } else {
+    setInnerText("grand-total", totalPrice);
+  }
 }
