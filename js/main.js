@@ -22,5 +22,7 @@ for (let btn of buttons) {
     const totalPrice = previewsTotalPrice + 550;
     // set total new price
     setInnerText("total-price", totalPrice);
+    // set grand total
+    getGrandTotal();
   });
 }

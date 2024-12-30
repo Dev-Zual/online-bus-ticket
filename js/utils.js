@@ -10,3 +10,8 @@ function getConvertedValue(id) {
   const valueText = document.getElementById(id).innerText;
   return Number(valueText);
 }
+
+function getGrandTotal() {
+  const totalPrice = getConvertedValue("total-price");
+  setInnerText("grand-total", totalPrice);
+}
