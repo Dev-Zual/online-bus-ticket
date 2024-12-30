@@ -286,7 +286,7 @@
           <!--! card area ends  -->
           <!--! seats area starts  -->
           <div class="bg-white rounded-xl p-5">
-            <div class="flex justify-between">
+            <div class="flex justify-between gap-5">
               <!-- seats left -->
               <div class="flex-1 space-y-3">
                 <h3 class="font-semibold">Select Your Seat</h3>
@@ -307,7 +307,7 @@
                 <div class="mx-28 pt-5">
                   <div class="text-right mb-4">
                     <button class="btn px-0 w-20">
-                      <img src="./images/seat-gray.png" alt="" />
+                      <img class="size-8" src="./images/image.png" alt="" />
                     </button>
                   </div>
                   <div class="flex gap-16 justify-between">
@@ -414,8 +414,119 @@
                 <!-- top area ends -->
               </div>
               <!-- seats left ends -->
+              <div class="border-r border-dashed border"></div>
               <!-- seats result area -->
-              <div class="w-5/12"></div>
+              <div class="w-5/12 space-y-3">
+                <h3 class="font-semibold">Your Selected Seat</h3>
+                <div>
+                  <hr class="border-dashed mb-6 border" />
+                </div>
+                <!-- showing price and selected seat -->
+                <div class="bg-[#F7F8F8] p-5 rounded-xl">
+                  <div class="overflow-x-auto">
+                    <table class="table">
+                      <!-- head -->
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Seat</th>
+                          <th>Class</th>
+                          <th>Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- row 1 -->
+                        <tr>
+                          <th>1</th>
+                          <td>Cy Ganderton</td>
+                          <td>Quality Control Specialist</td>
+                          <td>550</td>
+                        </tr>
+                        <!-- row 2 -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <hr class="mt-5 border border-[#030712]/20" />
+                  <div
+                    class="total mt-3 mx-5 font-semibold flex justify-between"
+                  >
+                    <h4>Total Price</h4>
+                    <h4>BDT <span>1100</span></h4>
+                  </div>
+                  <div class="mt-7 mx-7">
+                    <label
+                      class="input input-bordered flex items-center gap-2 p-3"
+                    >
+                      <input
+                        type="text"
+                        class="grow"
+                        placeholder="Have any coupons?"
+                      />
+                      <button class="btn bg-[#1dd100]">Apply</button>
+                    </label>
+                  </div>
+                  <!-- grand total -->
+                  <div
+                    class="total mt-5 mx-5 font-semibold flex justify-between"
+                  >
+                    <h4>Grand Total</h4>
+                    <h4>BDT <span>1100</span></h4>
+                  </div>
+                  <!-- grand total end -->
+                </div>
+                <!-- showing price and selected seat end -->
+                <!-- passengers info -->
+                <div>
+                  <label class="form-control w-full">
+                    <div class="label">
+                      <span class="label-text font-semibold"
+                        >Passenger Name*</span
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Enter Your Name"
+                      class="input input-bordered w-full"
+                    />
+                  </label>
+                  <label class="form-control w-full">
+                    <div class="label">
+                      <span class="label-text font-semibold"
+                        >Phone Number*</span
+                      >
+                    </div>
+                    <input
+                      type="number"
+                      placeholder="Enter Your Phone Number"
+                      class="input input-bordered w-full"
+                    />
+                  </label>
+                  <label class="form-control w-full">
+                    <div class="label">
+                      <span class="label-text font-semibold">Email ID</span>
+                    </div>
+                    <input
+                      type="email"
+                      placeholder="Enter Your Email"
+                      class="input input-bordered w-full"
+                    />
+                  </label>
+                  <button
+                    class="btn mt-5 w-full text-white font-semibold text-lg bg-[#1dd100]"
+                  >
+                    Next
+                  </button>
+                </div>
+                <!-- passengers info end -->
+                <div class="flex justify-center gap-10 mt-5">
+                  <span class="underline cursor-pointer"
+                    >Terms and Condition</span
+                  >
+                  <span class="underline cursor-pointer"
+                    >Cancellation Policy</span
+                  >
+                </div>
+              </div>
               <!-- seats result area ends-->
             </div>
           </div>
