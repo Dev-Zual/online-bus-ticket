@@ -24,6 +24,15 @@ function getGrandTotal(status) {
     const discount = totalPrice * 0.15;
     const price = totalPrice - discount;
     setInnerText("grand-total", price);
+    const couponBtn = document.getElementById("coupon-btn");
+    couponBtn.setAttribute("disabled", false);
+    document.getElementById("coupon-input").value = "";
+  } else if (coupon === "Couple 20") {
+    const discount = totalPrice * 0.2;
+    const price = totalPrice - discount;
+    setInnerText("grand-total", price);
+    const couponBtn = document.getElementById("coupon-btn");
+    couponBtn.setAttribute("disabled", false);
     document.getElementById("coupon-input").value = "";
   } else {
     setInnerText("grand-total", totalPrice);
