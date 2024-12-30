@@ -12,6 +12,11 @@ for (let btn of buttons) {
       "bg-[#1dd100]",
       "hover:bg-[#1dd100]"
     );
+
+    // set total seats left
+    const totalSeats = getConvertedValue("seats-left");
+    setInnerText("seats-left", totalSeats - 1);
+
     // set count btn value
     setInnerText("count-btn", count);
     const seatNumber = e.target.innerText;
