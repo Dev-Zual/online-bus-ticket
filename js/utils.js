@@ -17,8 +17,15 @@ function getTotal() {
   setInnerText("total-price", price);
 }
 
+function setDiscountedPrice(value) {
+  const html = `
+                <h4>Discounted Price</h4>
+                <h4>BDT <span>${value}</span></h4>
+    `;
+  document.getElementById("discount-price").innerHTML = html;
+}
+
 function getGrandTotal(status) {
-  console.log(status);
   const coupon = document.getElementById("coupon-input").value;
   const totalPrice = getConvertedValue("total-price");
 
@@ -32,6 +39,10 @@ function getGrandTotal(status) {
     setInnerText("grand-total", price);
     const couponBtn = document.getElementById("coupon-btn");
     couponBtn.setAttribute("disabled", false);
+
+    // showing discounted price
+    setDiscountedPrice(discount);
+
     document.getElementById("coupon-input").value = "";
   } else if (coupon === "Couple 20") {
     const discount = totalPrice * 0.2;
@@ -39,6 +50,11 @@ function getGrandTotal(status) {
     setInnerText("grand-total", price);
     const couponBtn = document.getElementById("coupon-btn");
     couponBtn.setAttribute("disabled", false);
+
+    // showing discounted price
+
+    setDiscountedPrice(discount);
+
     document.getElementById("coupon-input").value = "";
   } else {
     setInnerText("grand-total", totalPrice);
