@@ -18,8 +18,14 @@ function getTotal() {
 }
 
 function getGrandTotal(status) {
+  console.log(status);
   const coupon = document.getElementById("coupon-input").value;
   const totalPrice = getConvertedValue("total-price");
+
+  if (status && coupon !== "NEW15" && coupon !== "Couple 20") {
+    alert("Wrong Coupon code!");
+  }
+
   if (coupon === "NEW15") {
     const discount = totalPrice * 0.15;
     const price = totalPrice - discount;
