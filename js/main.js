@@ -4,6 +4,10 @@ let count = 0;
 for (let btn of buttons) {
   btn.addEventListener("click", function (e) {
     count++;
+    if (count > 4) {
+      alert("You can not buy  more then 4 tickets !");
+      return;
+    }
     // set clicked seat bg color
     const clickedBtn = e.target;
     // clickedBtn.style.backgroundColor = "#1dd100";
