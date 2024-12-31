@@ -49,7 +49,6 @@ function validInputs(e) {
   const isPhoneValid = phoneInput.value.trim() !== "";
   const isCorrectNumber = phoneInput.value.length === 11;
   nextBtn.disabled = !(isNameValid && isPhoneValid && isCorrectNumber);
-  console.log(e.target.value);
 }
 
 nameInput.addEventListener("input", validInputs);

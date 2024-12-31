@@ -26,36 +26,41 @@ function setDiscountedPrice(value) {
 }
 
 function getGrandTotal(status) {
-  const coupon = document.getElementById("coupon-input").value;
   const totalPrice = getConvertedValue("total-price");
 
-  if (status && coupon !== "NEW15" && coupon !== "Couple 20") {
-    alert("Wrong Coupon code!");
-  }
+  if (status) {
+    const coupon = document.getElementById("coupon-input").value;
 
-  if (coupon === "NEW15") {
-    const discount = totalPrice * 0.15;
-    const price = totalPrice - discount;
-    setInnerText("grand-total", price);
-    const couponBtn = document.getElementById("coupon-btn");
-    couponBtn.setAttribute("disabled", false);
+    // if (status && coupon !== "NEW15" && coupon !== "Couple 20") {
+    //   alert("Wrong Coupon code!");
+    // }
 
-    // showing discounted price
-    setDiscountedPrice(discount);
+    if (coupon === "NEW15") {
+      const discount = totalPrice * 0.15;
+      const price = totalPrice - discount;
+      setInnerText("grand-total", price);
+      const couponBtn = document.getElementById("coupon-btn");
+      couponBtn.setAttribute("disabled", false);
 
-    document.getElementById("coupon-input").value = "";
-  } else if (coupon === "Couple 20") {
-    const discount = totalPrice * 0.2;
-    const price = totalPrice - discount;
-    setInnerText("grand-total", price);
-    const couponBtn = document.getElementById("coupon-btn");
-    couponBtn.setAttribute("disabled", false);
+      // showing discounted price
+      setDiscountedPrice(discount);
 
-    // showing discounted price
+      document.getElementById("coupon-input").value = "";
+    } else if (coupon === "Couple 20") {
+      const discount = totalPrice * 0.2;
+      const price = totalPrice - discount;
+      setInnerText("grand-total", price);
+      const couponBtn = document.getElementById("coupon-btn");
+      couponBtn.setAttribute("disabled", false);
 
-    setDiscountedPrice(discount);
+      // showing discounted price
 
-    document.getElementById("coupon-input").value = "";
+      setDiscountedPrice(discount);
+
+      document.getElementById("coupon-input").value = "";
+    } else {
+      alert("Wrong Coupon code!");
+    }
   } else {
     setInnerText("grand-total", totalPrice);
   }
