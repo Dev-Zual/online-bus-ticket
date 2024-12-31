@@ -39,3 +39,18 @@ for (let btn of buttons) {
     getGrandTotal();
   });
 }
+
+const nameInput = document.getElementById("name");
+const phoneInput = document.getElementById("phone");
+const nextBtn = document.getElementById("next-btn");
+
+function validInputs(e) {
+  const isNameValid = nameInput.value.trim() !== "";
+  const isPhoneValid = phoneInput.value.trim() !== "";
+  const isCorrectNumber = phoneInput.value.length === 11;
+  nextBtn.disabled = !(isNameValid && isPhoneValid && isCorrectNumber);
+  console.log(e.target.value);
+}
+
+nameInput.addEventListener("input", validInputs);
+phoneInput.addEventListener("input", validInputs);
