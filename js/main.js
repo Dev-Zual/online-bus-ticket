@@ -11,6 +11,7 @@ for (let btn of buttons) {
     // set clicked seat bg color
     const clickedBtn = e.target;
     // clickedBtn.style.backgroundColor = "#1dd100";
+    clickedBtn.disabled = true;
     clickedBtn.classList.add(
       "text-white",
       "bg-[#1dd100]",
