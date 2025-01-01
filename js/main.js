@@ -54,12 +54,21 @@ for (let btn of buttons) {
       setInnerText("count-btn", count);
 
       // Adjust the total seats left
+      const totalSeats = getConvertedValue("seats-left");
       setInnerText("seats-left", totalSeats + 1);
 
       // Disable coupon button if less than 4 tickets
       if (count < 4) {
         couponBtn.disabled = true;
       }
+
+      // make available the canceled ticket
+      clickedBtn.disabled = false;
+      clickedBtn.classList.remove(
+        "text-white",
+        "bg-[#1dd100]",
+        "hover:bg-[#1dd100]"
+      );
 
       console.log("Ticket removed:", elementToDelete);
       e.stopPropagation();
