@@ -38,9 +38,32 @@ for (let btn of buttons) {
             <td>${seatNumber}</td>
             <td>Economy</td>
             <td>550</td>
-            <td><button class="btn bg-red-400">&#10539;</button></td>`;
+            <td><button class="cancel-btn btn bg-red-400">&#10539;</button></td>`;
 
     setChild("show-seat-list", tr);
+
+    // Attach event listener to all "Cancel Ticket" buttons
+    const cancelButton = tr.querySelector(".cancel-btn");
+
+    cancelButton.addEventListener("click", function (e) {
+      const elementToDelete = e.target.parentNode.parentNode;
+      elementToDelete.remove();
+
+      // Adjust the seat count
+      count--;
+      setInnerText("count-btn", count);
+
+      // Adjust the total seats left
+      setInnerText("seats-left", totalSeats + 1);
+
+      // Disable coupon button if less than 4 tickets
+      if (count < 4) {
+        couponBtn.disabled = true;
+      }
+
+      console.log("Ticket removed:", elementToDelete);
+      e.stopPropagation();
+    });
 
     // set total
     getTotal();
