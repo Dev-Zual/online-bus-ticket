@@ -1,6 +1,7 @@
 const buttons = document.getElementsByClassName("click-btn");
 
 let count = 0;
+
 for (let btn of buttons) {
   btn.addEventListener("click", function (e) {
     count++;
@@ -17,6 +18,12 @@ for (let btn of buttons) {
       "bg-[#1dd100]",
       "hover:bg-[#1dd100]"
     );
+
+    //checking if ticket 4 then coupon btn active
+    const couponBtn = document.getElementById("coupon-btn");
+    if (count === 4) {
+      couponBtn.disabled = false;
+    }
 
     // set total seats left
     const totalSeats = getConvertedValue("seats-left");
@@ -41,6 +48,7 @@ for (let btn of buttons) {
   });
 }
 
+// checking name & phone provide
 const nameInput = document.getElementById("name");
 const phoneInput = document.getElementById("phone");
 const nextBtn = document.getElementById("next-btn");
