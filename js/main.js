@@ -37,7 +37,8 @@ for (let btn of buttons) {
             <th>${count}</th>
             <td>${seatNumber}</td>
             <td>Economy</td>
-            <td>550</td>`;
+            <td>550</td>
+            <td><button class="btn bg-red-400">&#10539;</button></td>`;
 
     setChild("show-seat-list", tr);
 
